@@ -11,6 +11,7 @@ def ENV = System.getenv()
 version = version + (ENV.GITHUB_ACTIONS ? "" : "+local")
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven {
         name = 'Fabric'
@@ -20,7 +21,7 @@ repositories {
 
 dependencies {
     implementation 'net.fabricmc:javapoet:0.1.0'
-    implementation 'net.fabricmc:mapping-io:0.4.0'
+    implementation 'net.fabricmc:mapping-io:0.5.4+local'
 
     implementation 'org.ow2.asm:asm:9.2'
     implementation 'org.ow2.asm:asm-analysis:9.2'

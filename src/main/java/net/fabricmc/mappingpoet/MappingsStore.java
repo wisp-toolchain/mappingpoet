@@ -45,7 +45,7 @@ public class MappingsStore {
 	private static MappingTreeView readMappings(Path input) {
 		var tree = new MemoryMappingTree();
 		try {
-			MappingReader.read(input, MappingFormat.TINY_2, new MappingSourceNsSwitch(tree, "named"));
+			MappingReader.read(input, MappingFormat.TINY_2_FILE, new MappingSourceNsSwitch(tree, "named"));
 		} catch (IOException e) {
 			throw new RuntimeException("Failed to read mappings", e);
 		}
